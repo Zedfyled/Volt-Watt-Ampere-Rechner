@@ -13,18 +13,19 @@ function App() {
 
   let setVoltageFunc =( value:any ) => {
     setLastChanged("Voltage");
-
+    window.umami.track('Voltage', {volt: voltage});
     setVoltage(value);
   } 
 
   let setWattFunc =( value:any ) => {
     setLastChanged("Watt");
     setWatt(value);
-    
+    window.umami.track('Watt', {watt: watt});
   } 
 
   let setAmpsFunc =( value:any ) => {
     setLastChanged("Amps");
+    window.umami.track('Amps', {amps: amps});
     setAmps(value);
     
   } 
